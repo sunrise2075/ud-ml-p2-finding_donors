@@ -11813,7 +11813,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 检查你的Python版本</span>
@@ -11829,7 +11829,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 为这个项目导入需要的库</span>
@@ -11947,7 +11947,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO：总的记录数</span>
@@ -12008,7 +12008,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 将数据切分成特征和对应的标签</span>
@@ -12033,7 +12033,7 @@ Percentage of individuals making more than $50,000: 24.78%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 可视化 &#39;capital-gain&#39;和&#39;capital-loss&#39; 两个特征</span>
@@ -12366,7 +12366,7 @@ SXaP8WtVTZPMq2qS+zmdJTl+fBcAvJv7gb9TY4xvrwEAAPgRnjABAABtAgIAAGgTEAAAQJuAAAAA
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 对于倾斜的数据使用Log转换</span>
@@ -12702,7 +12702,7 @@ lt95AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
@@ -12844,7 +12844,7 @@ lt95AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO：使用pandas.get_dummies()对&#39;features_raw&#39;数据进行独热编码</span>
@@ -12854,13 +12854,7 @@ lt95AAAAAElFTkSuQmCC
 
 <span class="c1"># TODO：将&#39;income_raw&#39;编码成数字值</span>
 <span class="c1"># income = income_raw.apply(lambda x: 0 if x ==&#39;&lt;=50K&#39; else 1)</span>
-<span class="n">income</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">n_records</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row_value</span> <span class="ow">in</span> <span class="n">income_raw</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
-    <span class="k">if</span> <span class="n">row_value</span><span class="o">==</span><span class="s1">&#39;&lt;=50K&#39;</span><span class="p">:</span>
-        <span class="n">income</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">income</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
+<span class="n">income</span> <span class="o">=</span> <span class="n">income_raw</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="s2">&quot;&gt;50K&quot;</span><span class="p">))</span>
 
 
 <span class="c1"># 打印经过独热编码之后的特征数量</span>
@@ -12906,7 +12900,7 @@ lt95AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># 导入 train_test_split</span>
@@ -12980,6 +12974,40 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">temp_arr</span> <span class="o">=</span> <span class="n">y_val</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="k">print</span> <span class="s1">&#39;The number of value 1 is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">temp_arr</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">))</span> 
+<span class="k">print</span> <span class="s1">&#39;The number of value 0 is {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">temp_arr</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">))</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The number of value 1 is 1793
+The number of value 0 is 5443
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12994,8 +13022,8 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 <tbody>
 <tr>
 <td style="text-align:left">Positive</td>
-<td style="text-align:center">11208</td>
-<td style="text-align:right">34014</td>
+<td style="text-align:center">1793</td>
+<td style="text-align:right">5443</td>
 </tr>
 <tr>
 <td style="text-align:left">Negative</td>
@@ -13010,14 +13038,14 @@ $$ F_{\beta} = (1 + \beta^2) \cdot \frac{precision \cdot recall}{\left( \beta^2 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#不能使用scikit-learn，你需要根据公式自己实现相关计算。</span>
 
-<span class="n">TP</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">11208</span><span class="p">)</span>
+<span class="n">TP</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">1793</span><span class="p">)</span>
 <span class="n">TN</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">FP</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">34014</span><span class="p">)</span>
+<span class="n">FP</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">5443</span><span class="p">)</span>
 <span class="n">FN</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.5</span>
 
@@ -14156,6 +14184,10 @@ UmcWEJIkSZI6s4CQJEmS1Nn/B8YuRvCXZ0+8AAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答： </strong></p>
+<p>所谓森林就是我们可以有很多棵决策树。</p>
+<p>首先，这个模型会从训练集里面随机取出某个数量的训练数据构造第一棵决策树，然后同样的方法构造第二、第三棵......决策树。决策树的总量可以由参数定义。</p>
+<p>然后，在预测样本的时候，让每一颗决策树都给出自己的预测分类。</p>
+<p>最后，根据多数决策树的预测结果，来输出随机森林的最终预测结果。</p>
 
 </div>
 </div>
@@ -14200,15 +14232,9 @@ UmcWEJIkSZI6s4CQJEmS1Nn/B8YuRvCXZ0+8AAAAAElFTkSuQmCC
 <span class="n">cross_validator</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="c1"># TODO：初始化分类器</span>
-<span class="c1"># clf = DecisionTreeClassifier(random_state=0)</span>
-<span class="c1"># clf = SVC(kernel=&#39;rbf&#39;, random_state=0)</span>
-<span class="c1"># clf = SGDClassifier(loss=&#39;hinge&#39;, random_state=None)</span>
 <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># TODO：创建你希望调节的参数列表</span>
-<span class="c1"># parameters = { &#39;criterion&#39;:[&#39;gini&#39;,&#39;entropy&#39;],&#39;max_depth&#39; : list(range(1, 11)) }</span>
-<span class="c1"># parameters = {&#39;gamma&#39;: [1e-3, 1e-4],&#39;C&#39;: [1, 10, 100, 1000]}</span>
-<span class="c1"># parameters = {&#39;penalty&#39; : [ &#39;none&#39;, &#39;l1&#39;, &#39;l2&#39;, &#39;elasticnet&#39;]}</span>
 <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span> 
     <span class="s1">&#39;n_estimators&#39;</span><span class="p">:(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
     <span class="s1">&#39;max_depth&#39;</span><span class="p">:(</span><span class="bp">None</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
@@ -14352,12 +14378,25 @@ Final F-score on the validation data: 0.7436
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>回答：</strong></p>
 <ul>
-<li>特征1:age</li>
+<li>特征1:age </li>
+</ul>
+<p>理由:一般情况人的一生中，赚钱能力随着年龄阶段都会有明显的变化。比如婴儿期、儿童期和青年期，人会处于生长发育和学习阶段，基本没有赚钱能力。等到走入社会，随着时间，人的工作能力会不断增长，此时人的赚钱能力越来越强。绝大多数人等到退休以后的赚钱能力都会有明显下降。</p>
+<ul>
 <li>特征2:education_level</li>
+</ul>
+<p>受教育水平越高，收入越高，这一点是普遍现象</p>
+<ul>
 <li>特征3:workclass</li>
+</ul>
+<p>社会上不同类型的工作岗位收入差距很大，这一点不难理解</p>
+<ul>
 <li>特征4:sex</li>
+</ul>
+<p>一般而言，男人的赚钱能力会强于女人，否则传统观念怎么会认为男人应该更多承担养家的重任。</p>
+<ul>
 <li>特征5:capital-gain</li>
 </ul>
+<p>资本收入就是被动收入，拥有资产的人都算是资产阶级了。资产越多，收入越高，这个也很容易理解。</p>
 
 </div>
 </div>
